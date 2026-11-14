@@ -1,6 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Halove Edits</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Halove Edits</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: a living shader hero, then sticky-stacking project cards that auto-scroll real-looking sites; ink black, ivory type, champagne used for light only. Single dark look by choice. */
@@ -293,9 +291,35 @@ footer h2{font-size:clamp(3.4rem,13vw,11rem);line-height:.84}
 .pp .bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--line)}
 .pp .bar i{display:block;height:100%;width:calc(var(--pp,0)*100%);background:var(--champ)}
 @media(max-width:760px){.pp .sk{grid-template-columns:1fr;grid-template-rows:34% 1fr;gap:0}.pp .nums{height:100%}.pp .nums b{font-size:clamp(7rem,40vw,12rem)}.pp .txt{height:100%}}
+.card:nth-child(3){background:var(--char)}
+.aA{background:#E5E8DF;color:#151B16}
+.aA .h{position:relative;min-height:36em;background:linear-gradient(180deg,#B9CFD8,#F1DDB8 62%,#F0AE74);padding:3em;overflow:hidden}
+.aA .h h4{font-size:7.6em;color:#fff;max-width:7ch;text-shadow:0 2px 40px rgba(0,0,0,.18);position:relative;z-index:2}
+.aA .h::before{content:"";position:absolute;right:6%;bottom:0;width:48%;height:40%;background:#EEEDE4;box-shadow:inset 0 -2em 0 #1E2822}
+.aA .h::after{content:"";position:absolute;right:12%;bottom:12%;width:22%;height:16%;background:#FFD99C;box-shadow:9em 0 0 #FFD99C}
+.aA .mt{display:grid;grid-template-columns:repeat(4,1fr);gap:1em;padding:1.6em 3em;border-bottom:1px solid rgba(21,27,22,.18);font-size:.85em}
+.aA .mt small{display:block;font-family:var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#566158;font-size:.8em}
+.aA .q{font-family:var(--disp);font-size:4.4em;line-height:1.02;padding:2em 3em;max-width:16ch}
+.aA .rm{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6em;padding:0 3em 4em}
+.aA .rm div{aspect-ratio:4/5;border-radius:.5em;background:linear-gradient(170deg,#B9CFD8,#F1DDB8 60%,#F0AE74)}
+.aA .rm div:nth-child(2){background:linear-gradient(170deg,#4B6B49,#8FA48E)}
+.aA .rm div:nth-child(3){background:linear-gradient(170deg,#86684A,#F1DDB8)}
+.aA .sp{display:grid;grid-template-columns:repeat(4,1fr);gap:1em;padding:2em 3em 4em;border-top:1px solid rgba(21,27,22,.18);font-size:.9em}
+.aA .sp b{display:block;font-family:var(--disp);font-weight:400;font-size:4.4em;line-height:1}
+.aA .f{font-family:var(--disp);font-size:16em;line-height:.8;text-align:center;padding-top:.1em;overflow:hidden;white-space:nowrap}
+.phone .aA .h{min-height:18em;padding:1.4em}.phone .aA .h h4{font-size:3.6em}
+.phone .aA .mt,.phone .aA .sp,.phone .aA .rm{grid-template-columns:1fr 1fr;padding-left:1.2em;padding-right:1.2em}
+.phone .aA .q{font-size:2.4em;padding:1.2em}
+.fld{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.fld label{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--champ)}
+.fld input,.fld select,.fld textarea{font:inherit;font-size:1rem;min-height:50px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--ink);color:var(--ivory);width:100%}
+.fld textarea{padding:12px 16px;min-height:110px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--champ);outline:none}
+.fnote{font-size:.85rem;color:var(--mute);margin-top:14px}
+.ferr{min-height:1.3em;color:#ffb4a8;font-size:.9rem;margin:0 0 8px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{transform:none}}
 </style>
-
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style></head><body>
 <div class="curtain" id="curtain"></div><div class="ring" id="ring"></div>
 
 <header>
@@ -356,7 +380,7 @@ footer h2{font-size:clamp(3.4rem,13vw,11rem);line-height:.84}
     <p class="mono">Featured website concepts</p>
     <h2 style="margin-top:16px">Two boutiques,<br><em>reimagined online.</em></h2>
     <div class="stack" data-stack></div>
-    <div class="btns"><a class="btn" href="#web-design">All web design work</a></div>
+    <div class="btns"><a class="btn" href="#web-design">See All Projects</a></div>
   </section>
 </div>
 
@@ -365,7 +389,7 @@ footer h2{font-size:clamp(3.4rem,13vw,11rem);line-height:.84}
     <div class="mono">01 — Web Design &amp; Development</div>
     <h1 aria-label="Websites worth opening twice"><span data-split>Websites worth</span><span class="l2" data-split>opening twice.</span></h1>
     <p class="lead" style="margin-top:34px">Editorial layouts, restrained motion and mobile-first builds for fashion, boutique and brand-led businesses. Made to be sent over WhatsApp and look right on the first tap.</p>
-    <div class="btns"><a class="btn solid mag" href="#contact">Request a Website Quote</a><a class="btn mag" href="#projects">See the projects</a></div>
+    <div class="btns"><a class="btn solid mag" href="mailto:halovaishnavv@gmail.com?subject=Website%20quote%20request">Request a Website Quote</a><a class="btn mag" href="#projects">See the projects</a></div>
   </div>
   <div class="mq" aria-hidden="true"></div>
 
@@ -434,7 +458,7 @@ footer h2{font-size:clamp(3.4rem,13vw,11rem);line-height:.84}
     <div class="mono">02 — Video Editing &amp; Creative Production</div>
     <h1 aria-label="Cut with intent"><span data-split>Cut with</span><span class="l2" data-split>intent.</span></h1>
     <p class="lead" style="margin-top:34px">Cinematic edits, social media content, reels and creative storytelling.</p>
-    <div class="btns"><a class="btn solid mag" href="#contact">Contact Halove Edits</a><a class="btn mag" href="#web-design">Back to Web Design</a></div>
+    <div class="btns"><a class="btn solid mag" href="mailto:halovaishnavv@gmail.com">Contact Halove Edits</a><a class="btn mag" href="#web-design">Back to Web Design</a></div>
     <div class="tl" aria-hidden="true">
       <div class="rl"><span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span><span>00:20</span></div>
       <div class="tk"><b>V2</b><div class="lane"><i style="--l:8%;--w:22%;--c:#8f7443"></i><i style="--l:44%;--w:16%;--c:#6d7d6b"></i><i style="--l:72%;--w:20%;--c:#8f7443"></i></div></div>
@@ -456,34 +480,35 @@ footer h2{font-size:clamp(3.4rem,13vw,11rem);line-height:.84}
 
 <footer id="contact">
   <p class="mono">Contact Halove Edits</p>
-  <h2 style="margin-top:18px">Let's build<br><em>yours.</em></h2>
+  <h2 style="margin-top:18px">Have a project<br><em>in mind?</em></h2>
   <div class="bld">
-    <div>
-      <div class="grp"><span class="mono">What do you need?</span><div class="pick" data-g="need">
-        <button aria-pressed="false">Boutique or fashion website</button><button aria-pressed="false">Digital catalogue</button><button aria-pressed="false">Website redesign</button><button aria-pressed="false">UI/UX design</button><button aria-pressed="false">Video editing</button></div></div>
-      <div class="grp"><span class="mono">Extras</span><div class="pick" data-g="extra">
-        <button aria-pressed="false">WhatsApp enquiry button</button><button aria-pressed="false">Interactive animations</button><button aria-pressed="false">Mobile-first priority</button></div></div>
-    </div>
-    <div>
-      <div class="msg"><span class="mono">Your enquiry</span><pre id="msgTxt"></pre>
-        <div class="btns" style="margin-top:20px"><a class="btn solid" id="waBtn" href="#contact">Discuss Your Project</a></div>
-        <div class="contacts" id="contacts"></div></div>
-    </div>
+    <div><p class="lead">Tell me a little about your vision. Let's create something worth remembering.</p>
+      <div class="contacts"><a class="chip" href="mailto:halovaishnavv@gmail.com">halovaishnavv@gmail.com</a></div>
+      <div class="btns"><a class="btn" href="mailto:halovaishnavv@gmail.com?subject=Website%20quote%20request">Request a Website Quote</a></div></div>
+    <form class="msg" id="enq" novalidate>
+      <span class="mono">Project enquiry</span>
+      <div class="fld" style="margin-top:14px"><label for="fN">Your name</label><input id="fN" type="text" autocomplete="name"></div>
+      <div class="fld"><label for="fE">Email address</label><input id="fE" type="email" autocomplete="email"></div>
+      <div class="fld"><label for="fT">Project type</label><select id="fT"><option>Website Design &amp; Development</option><option>Website Redesign</option><option>Video Editing</option><option>Other Creative Project</option></select></div>
+      <div class="fld"><label for="fM">Tell me about your project</label><textarea id="fM"></textarea></div>
+      <p class="ferr" id="fErr" role="alert"></p>
+      <button class="btn solid" type="submit">Send Enquiry</button>
+      <p class="fnote" id="fNote" role="status">This opens your email app with the details filled in. You need to press send there. Nothing is sent automatically.</p>
+    </form>
   </div>
   <div class="copyright"><span>© Halove Edits</span><span>Web design · Video editing</span></div>
 </footer>
 
 <script>
-/* ===== EDIT HERE: your real links and details ===== */
+/* ===== EDIT HERE ===== */
 const CONFIG = {
-  whatsapp: "",    // digits only with country code, e.g. "919XXXXXXXXX"
-  email: "",       // your business email
-  instagram: "",   // full URL
-  umangDemo: "",   // live demo URL for Umang Heritage
-  mehraabDemo: "", // live demo URL for Mehraab Collection
-  editing: []      // { title:"", category:"", url:"" }
+  email: "halovaishnavv@gmail.com",
+  umangDemo: "./umang-heritage.html",
+  mehraabDemo: "./mehraab-collection.html",
+  aanganDemo: "./aangan-residences.html",
+  editing: []   // your video projects: { title:"", category:"", url:"" }
 };
-/* ================================================== */
+/* ====================== */
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -500,16 +525,19 @@ const PROJ=[
   pg:'<div class="pg uU"><div class="nv"><b>Umang</b><span>Sarees</span><span>Lehengas</span><span>Heritage</span></div><div class="h"><div class="t"><small>Festive edit</small><h4>Woven in <i>tradition</i></h4><u>Explore collection</u></div><div class="im"></div></div><div class="g"><div>Silk</div><div>Zari</div><div>Bridal</div></div><div class="q">Elegance, inherited.</div><div class="f">Umang · Heritage</div></div>'},
  {k:'M',t:'Mehraab Collection',cat:'Contemporary Boutique Website',demo:'mehraabDemo',brand:'Mehraab Collection',
   copy:'A contemporary boutique concept with modern collection layouts, clean typography and accessible navigation. Soft sage and sand tones keep the pieces in focus on every screen size.',
-  pg:'<div class="pg mM"><div class="nv"><b>Mehraab</b><span>Shop</span><span>Lookbook</span><span>About</span></div><div class="h"><div class="t"><small>New season</small><h4>The quiet <i>collection</i></h4><u>Shop now</u></div><div class="im"></div></div><div class="pr"><div></div><div></div><div></div><div></div><div></div><div></div></div><div class="lb">Made to be worn, not worshipped.</div><div class="f">Mehraab · Collection</div></div>'}
+  pg:'<div class="pg mM"><div class="nv"><b>Mehraab</b><span>Shop</span><span>Lookbook</span><span>About</span></div><div class="h"><div class="t"><small>New season</small><h4>The quiet <i>collection</i></h4><u>Shop now</u></div><div class="im"></div></div><div class="pr"><div></div><div></div><div></div><div></div><div></div><div></div></div><div class="lb">Made to be worn, not worshipped.</div><div class="f">Mehraab · Collection</div></div>'},
+ {k:'A',t:'Aangan Residences',cat:'Luxury Real Estate / Architectural Website',demo:'aanganDemo',brand:'Aangan Residences',
+  copy:'A luxury real estate concept laid out like an architectural monograph: huge serif type, a pinned walk-through of the rooms, a light-of-the-day slider and four switchable palettes. Sage, stone and warm timber keep the focus on space and light.',
+  pg:'<div class="pg aA"><div class="nv"><b>Aangan</b><span>Philosophy</span><span>Rooms</span><span>Residences</span></div><div class="h"><h4>Rooms that <i>breathe.</i></h4></div><div class="mt"><div><small>Type</small>Private residences</div><div><small>Location</small>Udaipur</div><div><small>Completion</small>2026</div><div><small>Status</small>3 homes available</div></div><div class="q">A home is measured in how the morning arrives.</div><div class="rm"><div></div><div></div><div></div></div><div class="sp"><div><b>4</b>Bedrooms</div><div><b>3,800</b>Sq ft</div><div><b>1</b>Courtyard</div><div><b>32</b>Native trees</div></div><div class="f">Aangan</div></div>'}
 ];
 function card(p,i){
   const u=CONFIG[p.demo];
-  const b=u?`<a class="btn solid mag" href="${u}" target="_blank" rel="noopener">View Live Demo</a>`:`<span class="btn" aria-disabled="true">Demo link to be added</span>`;
+  const b=`<a class="btn solid mag" href="${u}" target="_blank" rel="noopener">View Live Demo</a>`;
   return `<article class="card" style="--i:${i}"><div class="copy"><span class="mono">Project 0${i+1}</span><h3>${p.t}</h3>
    <div class="chips"><span class="chip k">${p.cat}</span><span class="chip">Independent design concept</span></div>
    <p>${p.copy}</p><div class="btns" style="margin-top:26px">${b}</div>
-   <p class="note">Independent design concept. Not commissioned, approved or endorsed by ${p.brand}. The preview is an illustrative mockup; replace it with a screenshot of the real build.</p></div>
-   <div class="stage"><div class="browser"><div class="chrome"><i></i><i></i><i></i><span>${u?u.replace(/^https?:\/\//,''):'demo-link-to-be-added'}</span></div><div class="scr">${p.pg}</div></div>
+   <p class="note">Independent design concept. Not commissioned, approved or endorsed by ${p.brand}.</p></div>
+   <div class="stage"><div class="browser"><div class="chrome"><i></i><i></i><i></i><span>${u}</span></div><div class="scr">${p.pg}</div></div>
    <div class="phone"><div class="scr">${p.pg}</div></div><div class="hint">Scrolls on its own · desktop + mobile</div></div></article>`;
 }
 $$('[data-stack]').forEach(s=>s.innerHTML=PROJ.map(card).join(''));
@@ -603,27 +631,18 @@ function route(){
 burger.onclick=()=>{const o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
 addEventListener('hashchange',route);
 
-/* enquiry builder */
-const sel={need:new Set(),extra:new Set()};
-function msg(){
-  const n=[...sel.need],x=[...sel.extra];
-  let m="Hi Halove Edits, I'd like to discuss a project.";
-  if(n.length)m+="\n\nI'm interested in: "+n.join(", ")+".";
-  if(x.length)m+="\nAlso: "+x.join(", ")+".";
-  m+="\n\nHere's a bit about my brand: ";
-  return m;
-}
-function paint(){
-  const m=msg();$('#msgTxt').textContent=m;
-  const b=$('#waBtn');
-  if(CONFIG.whatsapp){b.href='https://wa.me/'+CONFIG.whatsapp+'?text='+encodeURIComponent(m);b.target='_blank';b.rel='noopener';b.textContent='Send on WhatsApp'}
-  else{b.removeAttribute('target');b.href='#contact';b.textContent='Copy enquiry';b.onclick=ev=>{ev.preventDefault();try{navigator.clipboard.writeText(m).then(()=>b.textContent='Copied')}catch(e){const r=document.createRange();r.selectNode($('#msgTxt'));getSelection().removeAllRanges();getSelection().addRange(r)}}}
-}
-$$('.pick').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);const s=sel[g.dataset.g];on?s.add(b.textContent):s.delete(b.textContent);paint()}));
-const chips=[CONFIG.whatsapp?`<span class="chip">WhatsApp: +${CONFIG.whatsapp}</span>`:'<span class="chip">WhatsApp number to be added</span>',CONFIG.email?`<span class="chip">${CONFIG.email}</span>`:'<span class="chip">Email to be added</span>'];
-if(CONFIG.instagram)chips.push(`<a class="chip" href="${CONFIG.instagram}" target="_blank" rel="noopener">Instagram</a>`);
-$('#contacts').innerHTML=chips.join('');
-paint();
+/* enquiry: mailto, validated */
+$('#enq').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=$('#fN').value.trim(),m=$('#fE').value.trim(),t=$('#fT').value,d=$('#fM').value.trim(),er=$('#fErr');
+  if(n.length<2){er.textContent='Enter your name.';return}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){er.textContent='Enter a valid email address.';return}
+  if(d.length<5){er.textContent='Tell me a little about your project.';return}
+  er.textContent='';
+  const body=`Name: ${n}\nEmail: ${m}\nProject type: ${t}\n\n${d}`;
+  $('#fNote').textContent='Your email app should open now. Press send there to deliver the enquiry. If nothing opens, write to '+CONFIG.email+'.';
+  location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent('Project enquiry: '+t)}&body=${encodeURIComponent(body)}`;
+});
 
 /* scroll engine */
 const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
@@ -663,5 +682,4 @@ requestAnimationFrame(tick);
 /* boot */
 (function(){const h=location.hash.slice(1);cur=views.includes(h)?h:'home';show(cur)})();
 </script>
-
 </body></html>
