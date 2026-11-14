@@ -11,7 +11,7 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ink);color:var(--ivory);font:400 16px/1.6 var(--sans);overflow-x:clip;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:80}
@@ -70,7 +70,7 @@ nav a.cta:hover{background:var(--champ);color:#17120a}
 @keyframes vin{from{transform:translateY(20px)}to{transform:none}}
 .hero{position:relative;padding-block:clamp(70px,11vw,150px) clamp(60px,8vw,110px)}
 .hero canvas{position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);height:100%;z-index:-1;background:var(--ink)}
-.hero::after{content:"";position:absolute;inset:0 -50vw;z-index:-1;background:linear-gradient(180deg,transparent 60%,var(--ink));pointer-events:none}
+.hero::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);z-index:-1;background:linear-gradient(180deg,transparent 60%,var(--ink));pointer-events:none}
 .hero h1{font-size:clamp(4.6rem,19.5vw,17rem);line-height:.82;letter-spacing:-.02em;margin-top:26px}
 .hero h1 .l2{display:block;font-style:italic;color:var(--champ);padding-left:clamp(0px,9vw,140px)}
 .W{display:inline-block;white-space:nowrap}
@@ -582,7 +582,12 @@ let gl=null,P,U={},mx=.5,my=.5,sx=.5,sy=.5,running=false,t0=performance.now();
 try{
   gl=cv.getContext('webgl',{antialias:false,alpha:false});
   const vs='attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}';
-  const fs=`precision mediump float;uniform vec2 r,m;uniform float t;
+  const fs=`#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+uniform vec2 r,m;uniform float t;
   float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
   float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
   float fbm(vec2 p){float a=.5,s=0.;for(int i=0;i<5;i++){s+=a*n(p);p*=2.02;a*=.5;}return s;}
@@ -602,10 +607,10 @@ try{
   ['r','m','t'].forEach(k=>U[k]=gl.getUniformLocation(P,k));
 }catch(e){gl=null}
 function size(){if(!gl)return;const s=Math.min(devicePixelRatio||1,1.25)*.7;cv.width=Math.max(2,cv.clientWidth*s|0);cv.height=Math.max(2,cv.clientHeight*s|0);gl.viewport(0,0,cv.width,cv.height)}
-function draw(){if(!gl)return;sx+=(mx-sx)*.06;sy+=(my-sy)*.06;gl.uniform2f(U.r,cv.width,cv.height);gl.uniform2f(U.m,sx,sy);gl.uniform1f(U.t,(performance.now()-t0)/1000);gl.drawArrays(gl.TRIANGLES,0,3)}
+function draw(){if(!gl)return;sx+=(mx-sx)*.06;sy+=(my-sy)*.06;gl.uniform2f(U.r,cv.width,cv.height);gl.uniform2f(U.m,sx,sy);gl.uniform1f(U.t,((performance.now()-t0)/1000)%600);gl.drawArrays(gl.TRIANGLES,0,3)}
 function loop(){if(!running)return;draw();requestAnimationFrame(loop)}
 addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();mx=(e.clientX-r.left)/r.width;my=1-(e.clientY-r.top)/r.height});
-addEventListener('resize',size);
+addEventListener('resize',size);addEventListener('load',()=>{size();draw()});
 document.addEventListener('visibilitychange',()=>{running=!document.hidden&&!RM&&!!cv.parentNode;if(running)loop()});
 cv.style.background='radial-gradient(600px circle at 70% 30%,rgba(207,171,110,.18),#0b0a09)';
 function mount(v){const hero=$('#v-'+v+' .hero');if(!hero)return;hero.prepend(cv);size();draw();running=!RM&&!!gl;if(running)loop()}
