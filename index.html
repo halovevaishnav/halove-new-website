@@ -128,6 +128,11 @@ section{padding-block:clamp(72px,11vw,150px)}
 .note{font-size:.78rem!important;margin-top:18px;max-width:52ch}
 @media(max-width:900px){.card{position:relative;top:auto;grid-template-columns:1fr}}
 
+/* Clear access information for the private KLORDÉ storefront preview */
+.demo-access{margin-top:18px;padding:15px 18px;border:1px solid rgba(207,171,110,.55);border-radius:14px;background:rgba(207,171,110,.10);color:var(--ivory);font-size:.98rem;line-height:1.55}
+.demo-access-label{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--champ);margin-bottom:5px}
+.demo-access strong{color:var(--champ);font-size:1.1rem;letter-spacing:.06em;user-select:all}
+
 /* site mockups */
 .stage{position:relative;min-width:0;padding-bottom:10px}
 .browser{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#000;box-shadow:0 50px 90px -30px #000}
@@ -580,6 +585,7 @@ function card(p,i){
   return `<article class="card" style="--i:${i}"><div class="copy"><span class="mono">Project 0${i+1}</span><h3>${p.t}</h3>
    <div class="chips"><span class="chip k">${p.cat}</span><span class="chip">Independent design concept</span></div>
    <p>${p.copy}</p><div class="btns" style="margin-top:26px">${b}</div>
+   ${p.k==='K'?'<div class="demo-access" role="note"><span class="demo-access-label">Private Shopify demo access</span>After clicking View Shopify Demo, enter password: <strong>demo003</strong></div>':''}
    <p class="note">Independent design concept. Not commissioned, approved or endorsed by ${p.brand}.${p.k==='K'?' Private Shopify demo; storefront access may require a password.':''}</p></div>
    <div class="stage"><div class="browser"><div class="chrome"><i></i><i></i><i></i><span>${u}</span></div><div class="scr">${p.pg}</div></div>
    <div class="phone"><div class="scr">${p.pg}</div></div><div class="hint">Scrolls on its own · desktop + mobile</div></div></article>`;
