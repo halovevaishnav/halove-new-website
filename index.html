@@ -148,6 +148,35 @@ section{padding-block:clamp(72px,11vw,150px)}
 .pg h4{font-size:5.6em;line-height:.92}
 .pg small{font-family:var(--mono);font-size:.8em;letter-spacing:.28em;text-transform:uppercase}
 .pg u{font-size:.8em;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding-bottom:.3em}
+
+/* KLORDE — Shopify editorial concept: matching the existing CSS-only project mockups */
+.kK{background:#f6f0e7;color:#231e1b}
+.kK .nv{background:#f6f0e7;border-bottom:1px solid #d8c9b8}
+.kK .nv b{letter-spacing:.12em;font-size:2.65em}
+.kK .h{display:grid;grid-template-columns:1fr 1fr;min-height:36em}
+.kK .t{background:#2a211f;color:#f6f0e7;padding:4em 3em;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1.5em}
+.kK .t small{color:#b89b68}
+.kK .t h4{font-size:6.2em;line-height:.91;color:#f6f0e7}
+.kK .t h4 i{color:#d7b88b}
+.kK .t u{color:#e7cda6;border-bottom:1px solid #b89b68}
+.kK .im{position:relative;overflow:hidden;background:radial-gradient(circle at 54% 30%,#d9c2a7 0,#c7a58b 48%,#a77b75 100%)}
+.kK .im:before{content:"";position:absolute;inset:9% 12% 0;border-radius:48% 48% 0 0/25% 25% 0 0;border:2em solid #e6d3ba;background:linear-gradient(145deg,#70404a,#432b30);box-shadow:0 0 0 .2em rgba(90,40,50,.1)}
+.kK .im:after{content:"";position:absolute;left:34%;right:34%;bottom:-10%;height:67%;border-radius:48% 48% 8% 8%/28% 28% 4% 4%;background:linear-gradient(125deg,#ead3bb 8%,#b48c83 54%,#f0d7b8);box-shadow:0 -3.5em 0 -2em #a16c5f}
+.kK .g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4em;padding:4em 3em;background:#f6f0e7}
+.kK .g div{aspect-ratio:3/4;display:flex;align-items:flex-end;padding:1.1em;font-family:var(--disp);font-size:1.8em;background:linear-gradient(145deg,#d4b4aa,#8c5b65);color:#fff6ec}
+.kK .g div:nth-child(2){background:linear-gradient(145deg,#ddc6a7,#9a6e61);margin-top:2em}
+.kK .g div:nth-child(3){background:linear-gradient(145deg,#7a414d,#3f252b)}
+.kK .q{background:#722f3a;color:#f6f0e7;padding:3.2em 1.5em;text-align:center;font-family:var(--disp);font-size:3.8em;font-style:italic;line-height:1.1}
+.kK .f{background:#231e1b;color:#d8c0a3;text-align:center;letter-spacing:.35em;text-transform:uppercase;font-size:.8em;padding:3em}
+.phone .kK .h{grid-template-columns:1fr;min-height:0}
+.phone .kK .t{padding:2em 1.2em;gap:.9em}
+.phone .kK .t h4{font-size:3.6em}
+.phone .kK .im{min-height:15em}
+.phone .kK .g{padding:2em 1.2em;gap:.8em;grid-template-columns:1fr 1fr}
+.phone .kK .g div{font-size:1.2em}
+.phone .kK .g div:nth-child(3){display:none}
+.phone .kK .q{font-size:2.4em;padding:2em 1.2em}
+
 /* Umang */
 .uU{background:#3a0f16;color:#f1dfc0}
 .uU .h{display:grid;grid-template-columns:1.1fr 1fr;min-height:36em}
@@ -387,9 +416,10 @@ footer h2{font-size:clamp(3.4rem,13vw,11rem);line-height:.84}
 
   <section id="work" style="padding-top:0">
     <p class="mono">Featured website concepts</p>
-    <h2 style="margin-top:16px">Two boutiques,<br><em>reimagined online.</em></h2>
+    <h2 style="margin-top:16px">Four concepts,<br><em>reimagined online.</em></h2>
     <div class="stack" data-stack></div>
     <div class="btns"><a class="btn" href="#web-design">See All Projects</a></div>
+    <p class="mono" style="margin-top:22px;color:var(--mute)">Etc.</p>
   </section>
 </div>
 
@@ -406,6 +436,7 @@ footer h2{font-size:clamp(3.4rem,13vw,11rem);line-height:.84}
     <p class="mono">Selected work</p>
     <h2 style="margin-top:16px">Independent <em>design concepts</em></h2>
     <div class="stack" data-stack></div>
+    <p class="mono" style="margin-top:22px;color:var(--mute)">Etc.</p>
   </section>
 
   <section style="padding-top:0">
@@ -512,6 +543,7 @@ footer h2{font-size:clamp(3.4rem,13vw,11rem);line-height:.84}
 /* ===== EDIT HERE ===== */
 const CONFIG = {
   email: "halovaishnavv@gmail.com",
+  klordeDemo: "https://halove-edits-klorde-demo.myshopify.com/?preview_theme_id=199751794871",
   umangDemo: "./umang-heritage.html",
   mehraabDemo: "./mehraab-collection.html",
   aanganDemo: "./aangan-residences.html",
@@ -529,6 +561,9 @@ const mqH='<div>'+[...MQ,...MQ].map(x=>`<span>${x}</span>`).join('')+'</div>';
 $$('.mq').forEach(m=>m.innerHTML=mqH);
 
 const PROJ=[
+ {k:'K',t:'KLORDÉ',cat:'Shopify / Custom Liquid / Luxury E-commerce',demo:'klordeDemo',brand:'KLORDÉ',
+  copy:'A luxury Shopify storefront design concept for a contemporary fashion label. Editorial collection layouts, bespoke Shopify Liquid sections, refined typography and mobile-first shopping interactions, created as an independent demonstration.',
+  pg:'<div class="pg kK"><div class="nv"><b>KLORDÉ</b><span>Collections</span><span>New in</span><span>Editorial</span></div><div class="h"><div class="t"><small>Power · Edge · Impact</small><h4>Not made to <i>blend in.</i></h4><u>Discover the edit</u></div><div class="im"></div></div><div class="g"><div>New arrivals</div><div>The edit</div><div>Signature pieces</div></div><div class="q">Style with a point of view.</div><div class="f">KLORDÉ · The new perspective</div></div>'},
  {k:'U',t:'Umang Heritage',cat:'Luxury Ethnic Fashion Website',demo:'umangDemo',brand:'Umang Boutique',
   copy:'A luxury ethnic fashion concept with an editorial collection presentation, elegant typography and a mobile-first layout. Deep maroon and antique gold set the tone for festive and heritage wear.',
   pg:'<div class="pg uU"><div class="nv"><b>Umang</b><span>Sarees</span><span>Lehengas</span><span>Heritage</span></div><div class="h"><div class="t"><small>Festive edit</small><h4>Woven in <i>tradition</i></h4><u>Explore collection</u></div><div class="im"></div></div><div class="g"><div>Silk</div><div>Zari</div><div>Bridal</div></div><div class="q">Elegance, inherited.</div><div class="f">Umang · Heritage</div></div>'},
@@ -541,11 +576,11 @@ const PROJ=[
 ];
 function card(p,i){
   const u=CONFIG[p.demo];
-  const b=`<a class="btn solid mag" href="${u}" target="_blank" rel="noopener">View Live Demo</a>`;
+  const b=`<a class="btn solid mag" href="${u}" target="_blank" rel="noopener">${p.k==='K'?'View Shopify Demo':'View Live Demo'}</a>`;
   return `<article class="card" style="--i:${i}"><div class="copy"><span class="mono">Project 0${i+1}</span><h3>${p.t}</h3>
    <div class="chips"><span class="chip k">${p.cat}</span><span class="chip">Independent design concept</span></div>
    <p>${p.copy}</p><div class="btns" style="margin-top:26px">${b}</div>
-   <p class="note">Independent design concept. Not commissioned, approved or endorsed by ${p.brand}.</p></div>
+   <p class="note">Independent design concept. Not commissioned, approved or endorsed by ${p.brand}.${p.k==='K'?' Private Shopify demo; storefront access may require a password.':''}</p></div>
    <div class="stage"><div class="browser"><div class="chrome"><i></i><i></i><i></i><span>${u}</span></div><div class="scr">${p.pg}</div></div>
    <div class="phone"><div class="scr">${p.pg}</div></div><div class="hint">Scrolls on its own · desktop + mobile</div></div></article>`;
 }
